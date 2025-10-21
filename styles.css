@@ -396,7 +396,7 @@
         /* Responsive Styles */
         @media (max-width: 992px) {
             .about-content {
-                /* flex-direction: column; */
+               
                 display: block;
                   gap: 40px;
                
