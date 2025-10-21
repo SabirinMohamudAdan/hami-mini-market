@@ -86,8 +86,9 @@
     background-color: var(--primary-green);
 
  } */
-   .nav-links .act {
-            background-color:var(--primary-green); /* Primary green */
+   .nav-links .act :hover {
+            color:var(--primary-green); 
+          
         }
         .mobile-menu-btn {
             display: none;
