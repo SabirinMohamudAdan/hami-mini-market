@@ -82,7 +82,13 @@
         .nav-links a:hover {
             color: var(--primary-green);
         }
+ /* .nav-links .act:active{
+    background-color: var(--primary-green);
 
+ } */
+   .nav-links .act {
+            background-color:var(--primary-green); /* Primary green */
+        }
         .mobile-menu-btn {
             display: none;
             background: none;
