@@ -13,49 +13,7 @@
             });
         });
 
-        // // Form Validation
-        // const contactForm = document.getElementById('contactForm');
-        // const nameInput = document.getElementById('name');
-        // const emailInput = document.getElementById('email');
-        // const messageInput = document.getElementById('message');
-        // const nameError = document.getElementById('nameError');
-        // const emailError = document.getElementById('emailError');
-        // const messageError = document.getElementById('messageError');
-
-        // contactForm.addEventListener('submit', function(e) {
-        //     e.preventDefault();
-        //     let isValid = true;
-
-        //     // Name validation
-        //     if (nameInput.value.trim() === '') {
-        //         nameError.style.display = 'block';
-        //         isValid = false;
-        //     } else {
-        //         nameError.style.display = 'none';
-        //     }
-
-        //     // Email validation
-        //     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        //     if (!emailRegex.test(emailInput.value.trim())) {
-        //         emailError.style.display = 'block';
-        //         isValid = false;
-        //     } else {
-        //         emailError.style.display = 'none';
-        //     }
-
-        //     // Message validation
-        //     if (messageInput.value.trim() === '') {
-        //         messageError.style.display = 'block';
-        //         isValid = false;
-        //     } else {
-        //         messageError.style.display = 'none';
-        //     }
-
-        //     if (isValid) {
-        //         alert('Thank you for your message! We will get back to you soon.');
-        //         contactForm.reset();
-        //     }
-        // });
+        
 
 
 
