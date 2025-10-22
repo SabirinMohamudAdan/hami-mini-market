@@ -96,7 +96,7 @@ ul li.act a {
             border: none;
             font-size: 24px;
             cursor: pointer;
-            color: var(--primary-green);
+            color: yellow;
         }
 
         /* Hero Section */
