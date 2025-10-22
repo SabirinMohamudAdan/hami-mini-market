@@ -99,3 +99,25 @@ contactForm.addEventListener('submit', function(e) {
                 }
             });
         });
+
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            const elementsToAnimate = document.querySelectorAll('.section-title, .about-text, .about-image');
+            elementsToAnimate.forEach(el => {
+                observer.observe(el);
+            });
+        });
