@@ -14,10 +14,7 @@
         });
 
         
-
-
-
-        // Form Validation
+     // Form Validation
 const contactForm = document.getElementById('contactForm');
 const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
