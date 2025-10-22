@@ -10,7 +10,7 @@
 
 📍 Font Awesome Icons
 
-🚀 Quick Start
+🚀 How to Run:
 Download all project files
 
 Open index.html in your browser
