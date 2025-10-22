@@ -11,6 +11,7 @@
 📍 Font Awesome Icons
 
 🚀 How to Run:
+
 Download all project files
 
 Open index.html in your browser
