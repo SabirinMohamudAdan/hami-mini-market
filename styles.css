@@ -389,7 +389,7 @@ ul li.act a {
         }
 
         .back-to-top:hover {
-            background-color: var(--dark-green);
+            background-color: yellow;
             transform: translateY(-5px);
         }
 
