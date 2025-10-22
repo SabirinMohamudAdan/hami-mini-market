@@ -56,7 +56,7 @@
         }
 
         .logo-icon {
-            color: var(--primary-green);
+            color:yellow;
             font-size: 24px;
         }
 
@@ -130,7 +130,7 @@ ul li.act a {
         .cta-button {
             display: inline-block;
             background-color: var(--primary-green);
-            color: var(--light-text);
+            color:yellow;
             padding: 12px 30px;
             border-radius: var(--border-radius);
             text-decoration: none;
