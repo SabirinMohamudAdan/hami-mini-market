@@ -84,7 +84,7 @@
         }
   
 ul li.act a {
-  background: var(--primary-green);
+  background: yellow;
   color: white; 
      
 }
