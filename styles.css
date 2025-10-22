@@ -65,6 +65,11 @@
             font-weight: 700;
             color: var(--primary-green);
         }
+         .logo-text1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: yellow;
+        }
 
         .nav-links {
             display: flex;
