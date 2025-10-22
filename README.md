@@ -1,19 +1,20 @@
-Project Purpose
-Hami MiniMarket is a responsive, modern website for a local fresh fruits and vegetables market. The purpose of this project is to create an engaging online presence that showcases the market's products, tells their story, and provides an easy way for customers to get in touch. The website aims to promote fresh, locally sourced produce and make healthy food more accessible to the community.
+A modern, responsive website for a local fresh produce market.
 
-Technologies
-HTML5
+🎯 Purpose
+Showcase fresh fruits & vegetables, tell our story, and connect with customers.
 
-CSS3
+🛠️ Technologies
+⚡ HTML5
 
-JavaScript
+🎨 CSS3
 
-Font Awesome Icons
+⚙️ JavaScript
 
-How to Run:
+📍 Font Awesome Icons
 
-Download all files (HTML, CSS, JS)
+🚀 Quick Start
+Download all project files
 
-Open index.html in browser
+Open index.html in your browser
 
-Or install Live Server extension in VS Code and use it
+Or use VS Code Live Server extension
