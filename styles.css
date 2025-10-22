@@ -82,12 +82,16 @@
         .nav-links a:hover {
             color: var(--primary-green);
         }
-         .nav-links .act:active{
+         /* .nav-links .act:active{
     background: var(--primary-green);
     border-radius: 6px;
     color: white;
- }
-
+ } */
+ul li.act a {
+  background: var(--primary-green);
+  color: white; 
+     
+}
  
   
         .mobile-menu-btn {
