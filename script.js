@@ -65,9 +65,9 @@
             },
             {
                 id: 10,
-                name: "Oranges",
-                price: 2.5,
-                category: "fruits",
+                name: "lettuce",
+                price: 1.5,
+                category: "vegatable",
                 image: "https://media.gettyimages.com/id/1144589453/photo/iceberg-lettuce.jpg?s=612x612&w=0&k=20&c=xMsmr7soXocw--2OFSQXOyNSBk9cBkaC_nFYT_XQKm4="
             },
             {
