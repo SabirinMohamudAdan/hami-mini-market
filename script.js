@@ -81,8 +81,8 @@
              {
                 id: 11,
                 name: "green paper",
-                price: 2.5,
-                category: "vegatable",
+                price: 2,
+                category: "watermelon",
                 image: "https://media.gettyimages.com/id/1292640509/vector/melon-and-wedges.jpg?s=612x612&w=0&k=20&c=SL9JRVi8kOERlxMoAhyzGKeOxX9lYggmypx-Vpw_jrY="
             }
         ];
