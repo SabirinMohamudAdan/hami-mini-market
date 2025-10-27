@@ -3,22 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hami MiniMarket</title>
+    <title>Hami MiniMarket - Product Catalog</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   <link rel="stylesheet" href="styles.css">
-
-   
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
-                <!-- <i class="fas fa-leaf logo-icon"></i> -->
-                 <i class="fa-solid fa-lemon logo-icon"></i>
-              <h1 class="logo-text">Hami <span class="logo-text1"> Mini</span>Market
-
-              </h1>  
+                <i class="fa-solid fa-lemon logo-icon"></i>
+                <h1 class="logo-text">Hami <span class="logo-text1"> Mini</span>Market</h1>  
             </div>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -28,6 +23,12 @@
                 <li><a href="#products">Products</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li>
+                    <div class="cart-icon-container" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-counter" id="cartCount">0</span>
+                    </div>
+                </li>
             </ul>
         </div>
     </header>
@@ -41,126 +42,41 @@
         </div>
     </section>
 
-    <!-- Products Section --->
+   
+
+    <!-- Products Section -->
     <section class="section" id="products">
+        <!-- Search and Filter Section -->
+    
         <div class="container">
             <h2 class="section-title">Our Fresh Products</h2>
-            <div class="products-grid">
-                <!-- Product 1 -->
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('https://media.gettyimages.com/id/871227828/photo/unrecognizable-woman-shops-for-produce-in-supermarket.jpg?s=612x612&w=0&k=20&c=MIvrDLHynihoCE5hOQSJbPDfXV2eMYxTPmbCe_hoaYE=');"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Fresh Apples</h3>
-                        <p class="product-price">$2.99 </p>
-                    </div>
+            <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search products...">
                 </div>
-                <!-- Product 2 -->
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('https://media.gettyimages.com/id/1474339118/photo/carrots-for-sale-at-street-market-at-old-town-of-biel.jpg?s=612x612&w=0&k=20&c=a2VXh5kz7T3KR71v3QQ7a-iufJuPg-Oakt6SMU0DIQk=');"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Organic Carrots</h3>
-                        <p class="product-price">$1.49</p>
+                <div class="filter-group">
+                    <select class="filter-select" id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="fruits">Fruits</option>
+                        <option value="vegetables">Vegetables</option>
+                    </select>
+                    <div class="price-filter">
+                        <input type="number" id="priceFilter" placeholder="Max price" min="0" step="0.01">
                     </div>
-                </div>
-                <!-- Product 3 -->
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('https://media.gettyimages.com/id/1406728873/photo/ripe-red-cherry-tomatoes-at-a-retail-market-or-hypermarket-vegetarian-vegan-and-raw-food-and.jpg?s=612x612&w=0&k=20&c=clZtz2-4wNPbczK2r4lSpPFhoeksEhNIL19AHapOUX0=');"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Ripe Tomatoes</h3>
-                        <p class="product-price">$2.29 </p>
-                    </div>
-                </div>
-                <!-- Product 4 -->
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('https://media.gettyimages.com/id/628102266/photo/fruit-board-1.jpg?s=612x612&w=0&k=20&c=LVVaErnfFcQY2jW-hWob-5DRBeEvUzK-PY3IZ7wgM7E=');"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Fresh Spinach</h3>
-                        <p class="product-price">$3.49 </p>
-                    </div>
-                </div>
-                <!-- Product 5 -->
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('https://media.gettyimages.com/id/1132335445/photo/strawberry-isolated-on-a-white-background.jpg?s=612x612&w=0&k=20&c=Cn460vCremhFpEnx-hTZttBhaZZ_UDwDIzVzHCk-Jl0=');"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Sweet Strawberries</h3>
-                        <p class="product-price">$4.99 </p>
-                    </div>
-                </div>
-                <!-- Product 6 -->
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('https://media.gettyimages.com/id/157430678/photo/three-potatoes.jpg?s=612x612&w=0&k=20&c=qkMoEgcj8ZvYbzDYEJEhbQ57v-nmkHS7e88q8dv7TSA=');"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Potatos</h3>
-                        <p class="product-price">$1.6 </p>
-                    </div>
-                </div>
-
-
-                <!-- Product 7 -->
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('https://media.gettyimages.com/id/182810893/photo/fruit-mix.jpg?s=612x612&w=0&k=20&c=v9jopDXbS5LCXY1d8uSwEldLJVVkOpYtYtyHD8azWDU=');"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Green Bell Peppers</h3>
-                        <p class="product-price">$1.99 </p>
-                    </div>
-                </div>
-
-                <!-- Product 8 -->
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('https://media.gettyimages.com/id/2151881370/photo/raw-vegetables-and-fruit-thats-good-for-gut-health-microbiome.jpg?s=612x612&w=0&k=20&c=dbBYwfPaJ2QGz2gRstkHZGdhTvZWWSax6y7jOrUQy2s=');"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Green Bell Peppers</h3>
-                        <p class="product-price">$1.5 </p>
-                    </div>
-                </div>
-
-                <!-- Product 9 -->
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('https://media.gettyimages.com/id/1371271948/photo/oranges-were-placed-on-the-wooden-bottom.jpg?s=612x612&w=0&k=20&c=3IF44rZ-XL50V0itA5sNQqS0wvqQ2vD8eEntwGD_qVg=');"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Fresh Lemon</h3>
-                        <p class="product-price">$2.1</p>
-                    </div>
-                </div>
-
-
-                <!-- Product 10 -->
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('https://media.gettyimages.com/id/173255460/photo/assortment-of-fruits.jpg?s=612x612&w=0&k=20&c=9FCZJRCXbLH7KGVixrpQxl3GVGXepb2pXqkz-MkzDQM=');"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Green fruits</h3>
-                        <p class="product-price">$1.3 </p>
-                    </div>
-                </div>
-
-                <!-- Product 11 -->
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('https://media.gettyimages.com/id/1307216719/photo/fruit-and-vegetable-close-up.jpg?s=612x612&w=0&k=20&c=PxVNd6dbfvUwEQQu-gqMU7KZ1XvXK2AJs4aQB7k0h80=');"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Green Bell Peppers</h3>
-                        <p class="product-price">$1.2</p>
-                    </div>
-                </div>
-                 <!-- Product 12 -->
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('https://media.gettyimages.com/id/183217648/photo/bunch-of-different-types-of-fresh-grapes.jpg?s=612x612&w=0&k=20&c=Uag1Gm9tL0HsGkdvE4L28qVkiANuoJZUCKzzOxautpc=');"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">Green grapes</h3>
-                        <p class="product-price">$1.5</p>
-                    </div>
+                    <button class="filter-btn" id="applyFilters">Apply Filters</button>
                 </div>
             </div>
-            
-
-
-            
-            
+        </div>
+    </section>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
         </div>
     </section>
 
-    
-
-     <!-- About Section -->
+    <!-- About Section -->
     <section class="section about" id="about">
         <div class="container">
             <h2 class="section-title">About Hami MiniMarket</h2>
@@ -226,7 +142,7 @@
                 <div class="footer-column">
                     <h3>Contact Info</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> Mogadishu,Somalia</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Mogadishu, Somalia</li>
                         <li><i class="fas fa-phone"></i> (252) xxx-xxx</li>
                         <li><i class="fas fa-envelope"></i> info@hamimarket.com</li>
                     </ul>
@@ -238,13 +154,31 @@
         </div>
     </footer>
 
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-total" id="cartTotal">
+                Total: $0.00
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top" id="backToTop">
         <i class="fas fa-chevron-up"></i>
     </a>
 
     <script src="script.js">
-        
+       
     </script>
 </body>
 </html>

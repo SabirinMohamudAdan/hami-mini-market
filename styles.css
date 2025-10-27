@@ -56,7 +56,7 @@
         }
 
         .logo-icon {
-            color:yellow;
+            color: yellow;
             font-size: 24px;
         }
 
@@ -65,7 +65,8 @@
             font-weight: 700;
             color: var(--primary-green);
         }
-         .logo-text1 {
+
+        .logo-text1 {
             font-size: 24px;
             font-weight: 700;
             color: yellow;
@@ -87,14 +88,12 @@
         .nav-links a:hover {
             color: var(--primary-green);
         }
-  
-ul li.act a {
-  background: yellow;
-  color: white; 
-     
-}
- 
-  
+
+        ul li.act a {
+            background: yellow;
+            color: white;
+        }
+
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -104,11 +103,33 @@ ul li.act a {
             color: yellow;
         }
 
+        /* Cart Counter */
+        .cart-counter {
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+
+        .cart-icon-container {
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        
-            url('https://media.gettyimages.com/id/1659689959/photo/fresh-homegrown-vegetables-and-fruits-on-kitchen-table-summer-harvest-still-life-table-top.jpg?s=612x612&w=0&k=20&c=rS5xvL98hFQQuTITbrCcHKpNzNsWc-EkGrY--qV1QB4=');
+                        url('https://media.gettyimages.com/id/1659689959/photo/fresh-homegrown-vegetables-and-fruits-on-kitchen-table-summer-harvest-still-life-table-top.jpg?s=612x612&w=0&k=20&c=rS5xvL98hFQQuTITbrCcHKpNzNsWc-EkGrY--qV1QB4=');
             background-size: cover;
             background-position: center;
             color: var(--light-text);
@@ -135,7 +156,7 @@ ul li.act a {
         .cta-button {
             display: inline-block;
             background-color: var(--primary-green);
-            color:yellow;
+            color: yellow;
             padding: 12px 30px;
             border-radius: var(--border-radius);
             text-decoration: none;
@@ -148,6 +169,98 @@ ul li.act a {
             background-color: transparent;
             color: var(--light-text);
             border-color: var(--light-text);
+        }
+
+        /* Search and Filter Section */
+        .filters-section {
+            background-color: var(--light-text);
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .filters-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-green);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(46, 139, 87, 0.2);
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-select {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            background-color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-select:focus {
+            border-color: var(--primary-green);
+            outline: none;
+        }
+
+        .price-filter {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price-filter input {
+            width: 100px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+
+        .price-filter input:focus {
+            border-color: var(--primary-green);
+            outline: none;
+        }
+
+        .filter-btn {
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover {
+            background-color: var(--dark-green);
         }
 
         /* Products Section */
@@ -174,16 +287,7 @@ ul li.act a {
             overflow: hidden;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
-            animation: float 1s ease-in-out  infinite;
         }
-         /* .product-card {
-    background-color: var(--light-text);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--box-shadow);
-    transition: var(--transition);
-    animation: float 3s ease-in-out infinite;
-} */
 
         .product-card:hover {
             transform: translateY(-10px);
@@ -210,12 +314,138 @@ ul li.act a {
             color: var(--primary-green);
             font-weight: 700;
             font-size: 1.1rem;
+            margin-bottom: 15px;
         }
 
-      
-        
+        .product-category {
+            color: var(--gray-text);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            text-transform: capitalize;
+        }
 
-         /* About Section */
+        .add-to-cart {
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            width: 100%;
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--dark-green);
+        }
+
+        .no-products {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            color: var(--gray-text);
+            font-size: 1.2rem;
+        }
+
+        /* Cart Modal */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cart-content {
+            background-color: white;
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 500px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-text);
+        }
+
+        .cart-items {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+        }
+
+        .cart-item-price {
+            color: var(--primary-green);
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .cart-total {
+            text-align: right;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .checkout-btn {
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            transition: var(--transition);
+        }
+
+        .checkout-btn:hover {
+            background-color: var(--dark-green);
+        }
+
+        /* About Section */
         .about {
             background-color: var(--light-text);
             overflow: hidden;
@@ -270,7 +500,6 @@ ul li.act a {
             flex: 1;
             height: 400px;
             background: url('https://media.gettyimages.com/id/2047720396/photo/hands-of-woman-holding-vegetarian-food-lunch-box-near-man-at-table.jpg?s=612x612&w=0&k=20&c=yf8CnlBGlYeKYz58TXKPmrSUoKI_nvS0qcA-C-Q_aQU=');
-            /* background: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'); */
             background-size: cover;
             background-position: center;
             border-radius: var(--border-radius);
@@ -298,7 +527,6 @@ ul li.act a {
             opacity: 1;
             transform: translateX(0) scale(1);
         }
-
 
         /* Contact Section */
         .contact-form {
@@ -471,9 +699,7 @@ ul li.act a {
             transform: translateY(-5px);
         }
 
-       
-       
-          /* Responsive Design */
+        /* Responsive Design */
         @media (max-width: 992px) {
             .about-content {
                 display: block;
@@ -493,9 +719,7 @@ ul li.act a {
             .about-text p {
                 font-size: 1rem;
             }
-        }
 
-        @media (max-width: 768px) {
             .nav-links {
                 display: none;
                 position: absolute;
@@ -523,6 +747,15 @@ ul li.act a {
 
             .section-title {
                 font-size: 1.8rem;
+            }
+
+            .filters-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-box {
+                min-width: 100%;
             }
         }
 
