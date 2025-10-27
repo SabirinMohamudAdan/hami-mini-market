@@ -84,7 +84,15 @@
                 price: 2,
                 category: "fruits",
                 image: "https://media.gettyimages.com/id/1292640509/vector/melon-and-wedges.jpg?s=612x612&w=0&k=20&c=SL9JRVi8kOERlxMoAhyzGKeOxX9lYggmypx-Vpw_jrY="
+            },
+             {
+                id: 13,
+                name: "Onion",
+                price: 1.2,
+                category: "vegetables",
+                image: "https://media.gettyimages.com/id/463175283/photo/food.jpg?s=612x612&w=0&k=20&c=2QK_eHu-buw_Dnfi2L7dT7AIYl6Eb7w98XvUpTJ5Qrs="
             }
+
         ];
 
         // Cart functionality
