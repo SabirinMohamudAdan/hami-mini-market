@@ -44,7 +44,7 @@
             },
             {
                 id: 7,
-                name: "",
+                name: "Banana",
                 price: 1.99,
                 category: "fruits",
                 image: "https://media.gettyimages.com/id/182810893/photo/fruit-mix.jpg?s=612x612&w=0&k=20&c=v9jopDXbS5LCXY1d8uSwEldLJVVkOpYtYtyHD8azWDU="
