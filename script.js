@@ -68,7 +68,7 @@
                 name: "Oranges",
                 price: 2.5,
                 category: "fruits",
-                image: "https://media.gettyimages.com/id/173255460/photo/assortment-of-fruits.jpg?s=612x612&w=0&k=20&c=9FCZJRCXbLH7KGVixrpQxl3GVGXepb2pXqkz-MkzDQM="
+                image: "https://media.gettyimages.com/id/1144589453/photo/iceberg-lettuce.jpg?s=612x612&w=0&k=20&c=xMsmr7soXocw--2OFSQXOyNSBk9cBkaC_nFYT_XQKm4="
             },
             {
                 id: 11,
@@ -79,7 +79,7 @@
             },
 
              {
-                id: 11,
+                id: 12,
                 name: "watermelon",
                 price: 2,
                 category: "fruits",
