@@ -380,7 +380,7 @@
                         <div class="cart-item-name">${item.name}</div>
                         <div class="cart-item-price">$${item.price.toFixed(2)} </div>
                     </div>
-                    <button class="remove-item" data-id="${item.id}">&times;</button>
+                    <button class="remove-item" data-id="${item.id}"><i class="fa-solid fa-trash"></i></button>
                 `;
                 cartItems.appendChild(cartItem);
             });
