@@ -72,7 +72,7 @@
             },
             {
                 id: 11,
-                name: "green paper",
+                name: "green pepper",
                 price: 2.5,
                 category: "vegatable",
                 image: "https://media.gettyimages.com/id/503382026/video/fresh-vegetable.jpg?s=640x640&k=20&c=Y3eJjKreik7UchRY_KYzL5E0T6nsQjOxIg5jqK3pa6U="
