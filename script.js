@@ -25,7 +25,7 @@
                 id: 4,
                 name: "Fresh Spinach",
                 price: 3.49,
-                category: "vegetables",
+                category: "fruits",
                 image: "https://media.gettyimages.com/id/628102266/photo/fruit-board-1.jpg?s=612x612&w=0&k=20&c=LVVaErnfFcQY2jW-hWob-5DRBeEvUzK-PY3IZ7wgM7E="
             },
             {
@@ -80,9 +80,9 @@
 
              {
                 id: 11,
-                name: "green paper",
+                name: "watermelon",
                 price: 2,
-                category: "watermelon",
+                category: "fruits",
                 image: "https://media.gettyimages.com/id/1292640509/vector/melon-and-wedges.jpg?s=612x612&w=0&k=20&c=SL9JRVi8kOERlxMoAhyzGKeOxX9lYggmypx-Vpw_jrY="
             }
         ];
