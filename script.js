@@ -67,14 +67,14 @@
                 id: 10,
                 name: "lettuce",
                 price: 1.5,
-                category: "vegatable",
+                category: "vegetables",
                 image: "https://media.gettyimages.com/id/1144589453/photo/iceberg-lettuce.jpg?s=612x612&w=0&k=20&c=xMsmr7soXocw--2OFSQXOyNSBk9cBkaC_nFYT_XQKm4="
             },
             {
                 id: 11,
                 name: "green pepper",
                 price: 2.5,
-                category: "vegatable",
+                category: "vegetables",
                 image: "https://media.gettyimages.com/id/503382026/video/fresh-vegetable.jpg?s=640x640&k=20&c=Y3eJjKreik7UchRY_KYzL5E0T6nsQjOxIg5jqK3pa6U="
             },
 
