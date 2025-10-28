@@ -620,6 +620,20 @@
         .footer-column h3  i{
             color: var(--primary-green);
         }
+         /* .footer-column h3  i :hover{
+            background:yellow;
+        } */
+
+        .footer-column h3 i {
+    transition: all 0.3s ease;
+}
+
+.footer-column h3 i:hover {
+    color: yellow;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
         .foote-logo{
              color:yellow;
         }
