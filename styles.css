@@ -617,6 +617,12 @@
             /* margin-left: 60px; */
             font-size: 1.2rem;
         }
+        .footer-column h3  i{
+            color: var(--primary-green);
+        }
+        .foote-logo{
+             color:yellow;
+        }
 
         .footer-links {
             list-style: none;
