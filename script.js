@@ -425,3 +425,104 @@
             updateCartCount();
             updateCartDisplay();
         }
+
+        // --------------------5
+        // Animation on scroll
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     const observerOptions = {
+        //         threshold: 0.1,
+        //         rootMargin: '0px 0px -50px 0px'
+        //     };
+
+        //     const observer = new IntersectionObserver(function(entries) {
+        //         entries.forEach(entry => {
+        //             if (entry.isIntersecting) {
+        //                 if (entry.target.classList.contains('about-text')) {
+        //                     entry.target.classList.add('animate');
+                            
+        //                     // Animate feature items
+        //                     const featureItems = entry.target.querySelectorAll('.feature-item');
+        //                     featureItems.forEach(item => {
+        //                         item.classList.add('animate');
+        //                     });
+        //                 }
+                        
+        //                 if (entry.target.classList.contains('about-image')) {
+        //                     entry.target.classList.add('animate');
+        //                 }
+                        
+        //                 if (entry.target.classList.contains('contact-info')) {
+        //                     entry.target.classList.add('animate');
+                            
+        //                     // Animate contact items
+        //                     const contactItems = entry.target.querySelectorAll('.contact-item');
+        //                     contactItems.forEach(item => {
+        //                         item.classList.add('animate');
+        //                     });
+        //                 }
+                        
+        //                 if (entry.target.classList.contains('contact-form')) {
+        //                     entry.target.classList.add('animate');
+        //                 }
+        //             }
+        //         });
+        //     }, observerOptions);
+
+        //     // Observe elements
+        //     const aboutText = document.querySelector('.about-text');
+        //     const aboutImage = document.querySelector('.about-image');
+        //     const contactInfo = document.querySelector('.contact-info');
+        //     const contactForm = document.querySelector('.contact-form');
+
+        //     if (aboutText) observer.observe(aboutText);
+        //     if (aboutImage) observer.observe(aboutImage);
+        //     if (contactInfo) observer.observe(contactInfo);
+        //     if (contactForm) observer.observe(contactForm);
+
+        //     // Form validation
+        //     const contactFormElement = document.getElementById('contactForm');
+        //     if (contactFormElement) {
+        //         contactFormElement.addEventListener('submit', function(e) {
+        //             e.preventDefault();
+                    
+        //             let isValid = true;
+                    
+        //             // Name validation
+        //             const nameInput = document.getElementById('name');
+        //             const nameError = document.getElementById('nameError');
+        //             if (!nameInput.value.trim()) {
+        //                 nameError.style.display = 'block';
+        //                 isValid = false;
+        //             } else {
+        //                 nameError.style.display = 'none';
+        //             }
+                    
+        //             // Email validation
+        //             const emailInput = document.getElementById('email');
+        //             const emailError = document.getElementById('emailError');
+        //             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        //             if (!emailInput.value.trim() || !emailRegex.test(emailInput.value)) {
+        //                 emailError.style.display = 'block';
+        //                 isValid = false;
+        //             } else {
+        //                 emailError.style.display = 'none';
+        //             }
+                    
+        //             // Message validation
+        //             const messageInput = document.getElementById('message');
+        //             const messageError = document.getElementById('messageError');
+        //             if (!messageInput.value.trim()) {
+        //                 messageError.style.display = 'block';
+        //                 isValid = false;
+        //             } else {
+        //                 messageError.style.display = 'none';
+        //             }
+                    
+        //             if (isValid) {
+        //                 // In a real application, you would submit the form here
+        //                 alert('Thank you for your message! We will get back to you soon.');
+        //                 contactFormElement.reset();
+        //             }
+        //         });
+        //     }
+        // });
