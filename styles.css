@@ -463,6 +463,54 @@
         }
 
         /* About Section */
+
+
+
+        .mini-logo{
+  display: inline-block;
+  position: relative;
+  font-weight: 700;
+  /* base yellow fill using background-clip trick */
+  background:yellow;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;                 /* text shows the gradient */
+  text-transform: none;
+  letter-spacing: 0.5px;
+  transition: transform 220ms ease, filter 220ms ease;
+  will-change: transform;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+
+/* subtle scale on hover/focus */
+.mini-logo:hover,
+.mini-logo:focus{
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* the moving "shine" gloss across the letters */
+.mini-logo::after{
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -50%;
+  width: 50%;
+  height: 120%;
+  pointer-events: none;
+  transform: skewX(-20deg);
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.95) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  filter: blur(6px);
+  opacity: 0.9;
+  mix-blend-mode: screen;
+  animation: mini-shine 2.2s linear infinite;
+}
+/* ============= */
         .about {
             background-color: var(--light-text);
             overflow: hidden;
