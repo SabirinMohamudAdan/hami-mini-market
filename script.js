@@ -77,22 +77,41 @@
                 category: "vegetables",
                 image: "https://media.gettyimages.com/id/503382026/video/fresh-vegetable.jpg?s=640x640&k=20&c=Y3eJjKreik7UchRY_KYzL5E0T6nsQjOxIg5jqK3pa6U="
             },
-
-             {
+            {
                 id: 12,
                 name: "watermelon",
                 price: 2,
                 category: "fruits",
                 image: "https://media.gettyimages.com/id/1292640509/vector/melon-and-wedges.jpg?s=612x612&w=0&k=20&c=SL9JRVi8kOERlxMoAhyzGKeOxX9lYggmypx-Vpw_jrY="
             },
-             {
+            {
                 id: 13,
                 name: "Onion",
                 price: 1.2,
                 category: "vegetables",
                 image: "https://media.gettyimages.com/id/463175283/photo/food.jpg?s=612x612&w=0&k=20&c=2QK_eHu-buw_Dnfi2L7dT7AIYl6Eb7w98XvUpTJ5Qrs="
+            },
+              {
+                id: 14,
+                name: "Garlic",
+                price: 1,
+                category: "vegetables",
+                image: "https://media.gettyimages.com/id/1426800146/photo/garlic-cloves-and-bulb-flying-on-a-white-background.jpg?s=612x612&w=0&k=20&c=gz04almGMoBdvzRA1L2PoaqEb1fKU3qMwcd7xTNzl5M="
+            },
+             {
+                id: 15,
+                name: "Mango",
+                price: 2.2,
+                category: "fruits",
+                image: "https://media.gettyimages.com/id/2211144904/photo/summer-fruits-isolated-on-clear-background.jpg?s=612x612&w=0&k=20&c=eGBlb33wuwdQbl3begQtyR8RJHMrwlR6Fs6wHTFniE8="
+            },
+            {
+                id: 16,
+                name: "Avocado",
+                price: 1.6,
+                category: "fruits",
+                image: "https://media.gettyimages.com/id/1222302648/photo/sliced-avocado-on-white-background.jpg?s=612x612&w=0&k=20&c=OzpHqML-HnOv0_FiPPndJohYk1eUIaNYVrS2YzMVlFI="
             }
-
         ];
 
         // Cart functionality
@@ -102,10 +121,26 @@
         const cartModal = document.getElementById('cartModal');
         const closeCart = document.getElementById('closeCart');
         const cartItems = document.getElementById('cartItems');
+        const cartSummary = document.getElementById('cartSummary');
         const cartTotal = document.getElementById('cartTotal');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        
+        // Order modal elements
+        const orderModal = document.getElementById('orderModal');
+        const orderSubtotal = document.getElementById('orderSubtotal');
+        const orderTax = document.getElementById('orderTax');
+        const orderTotal = document.getElementById('orderTotal');
+        const continueShopping = document.getElementById('continueShopping');
+        const viewOrder = document.getElementById('viewOrder');
 
         // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
+            // Save products to localStorage for use across modules
+            localStorage.setItem('products', JSON.stringify(products));
+            
+            // Load cart from localStorage
+            loadCart();
+            
             displayProducts(products);
             setupEventListeners();
             updateCartCount();
@@ -166,6 +201,33 @@
             // Cart functionality
             cartIcon.addEventListener('click', openCart);
             closeCart.addEventListener('click', closeCartModal);
+            
+            checkoutBtn.addEventListener('click', function() {
+                if (cart.length === 0) {
+                    showToast('Your cart is empty!');
+                    return;
+                }
+                
+                // Calculate totals
+                const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+                const tax = subtotal * 0.05; // 5% tax
+                const total = subtotal + tax;
+                
+                // Show order confirmation modal
+                showOrderConfirmation(subtotal, tax, total);
+            });
+
+            // Order modal buttons
+            continueShopping.addEventListener('click', function() {
+                closeOrderModal();
+                closeCartModal();
+            });
+
+            viewOrder.addEventListener('click', function() {
+                closeOrderModal();
+                
+                showToast('Order details would be shown here in a real application');
+            });
 
             // Close cart when clicking outside
             cartModal.addEventListener('click', function(e) {
@@ -174,9 +236,13 @@
                 }
             });
 
+            // Close order modal when clicking outside
+            orderModal.addEventListener('click', function(e) {
+                if (e.target === orderModal) {
+                    closeOrderModal();
+                }
+            });
 
-            // ------------
-            
             // Mobile menu toggle
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const navLinks = document.querySelector('.nav-links');
@@ -333,8 +399,33 @@
                 });
             }
 
+            saveCart();
             updateCartCount();
-            showCartNotification(`${product.name} added to cart!`);
+            showToast(`${product.name} added to cart!`);
+        }
+
+        // Remove item from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            saveCart();
+            updateCartCount();
+            updateCartDisplay();
+        }
+
+        // Update item quantity in cart
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                
+                if (item.quantity <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    saveCart();
+                    updateCartCount();
+                    updateCartDisplay();
+                }
+            }
         }
 
         // Update cart count in the header
@@ -343,32 +434,14 @@
             cartCount.textContent = totalItems;
         }
 
-        // Show cart notification
-        function showCartNotification(message) {
-            // Create notification element
-            const notification = document.createElement('div');
-            notification.textContent = message;
-            notification.style.cssText = `
-                position: fixed;
-                top: 100px;
-                right: 20px;
-                background-color: var(--primary-green);
-                color: white;
-                padding: 10px 20px;
-                border-radius: var(--border-radius);
-                box-shadow: var(--box-shadow);
-                z-index: 1001;
-                transition: opacity 0.3s ease;
-            `;
-
-            document.body.appendChild(notification);
-
-            // Remove notification after 3 seconds
+        // Show toast notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            
             setTimeout(() => {
-                notification.style.opacity = '0';
-                setTimeout(() => {
-                    document.body.removeChild(notification);
-                }, 300);
+                toast.classList.remove('show');
             }, 3000);
         }
 
@@ -383,33 +456,78 @@
             cartModal.style.display = 'none';
         }
 
+        // Show order confirmation modal
+        function showOrderConfirmation(subtotal, tax, total) {
+            // Update order details
+            orderSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+            orderTax.textContent = `$${tax.toFixed(2)}`;
+            orderTotal.textContent = `$${total.toFixed(2)}`;
+            
+            // Show modal
+            orderModal.style.display = 'flex';
+            
+            // Clear cart
+            cart = [];
+            saveCart();
+            updateCartCount();
+            updateCartDisplay();
+            closeCartModal();
+        }
+
+        // Close order modal
+        function closeOrderModal() {
+            orderModal.style.display = 'none';
+        }
+
         // Update cart display in the modal
         function updateCartDisplay() {
             cartItems.innerHTML = '';
             
             if (cart.length === 0) {
                 cartItems.innerHTML = '<p>Your cart is empty.</p>';
+                cartSummary.innerHTML = '';
                 cartTotal.textContent = 'Total: $0.00';
                 return;
             }
 
-            let total = 0;
+            let subtotal = 0;
             
             cart.forEach(item => {
                 const itemTotal = item.price * item.quantity;
-                total += itemTotal;
+                subtotal += itemTotal;
                 
                 const cartItem = document.createElement('div');
                 cartItem.className = 'cart-item';
                 cartItem.innerHTML = `
                     <div class="cart-item-info">
                         <div class="cart-item-name">${item.name}</div>
-                        <div class="cart-item-price">$${item.price.toFixed(2)} </div>
+                        <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                        </div>
                     </div>
                     <button class="remove-item" data-id="${item.id}"><i class="fa-solid fa-trash"></i></button>
                 `;
                 cartItems.appendChild(cartItem);
             });
+
+            // Calculate totals
+            const tax = subtotal * 0.05; // 5% tax
+            const total = subtotal + tax;
+
+            // Update summary
+            cartSummary.innerHTML = `
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span>$${subtotal.toFixed(2)}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax (5%):</span>
+                    <span>$${tax.toFixed(2)}</span>
+                </div>
+            `;
 
             cartTotal.textContent = `Total: $${total.toFixed(2)}`;
 
@@ -420,112 +538,30 @@
                     removeFromCart(productId);
                 });
             });
+
+            // Add event listeners to quantity buttons
+            document.querySelectorAll('.quantity-btn.minus').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    updateQuantity(productId, -1);
+                });
+            });
+
+            document.querySelectorAll('.quantity-btn.plus').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    updateQuantity(productId, 1);
+                });
+            });
         }
 
-        // Remove item from cart
-        function removeFromCart(productId) {
-            cart = cart.filter(item => item.id !== productId);
-            updateCartCount();
-            updateCartDisplay();
+        // Save cart to localStorage
+        function saveCart() {
+            localStorage.setItem('cart', JSON.stringify(cart));
         }
 
-        // --------------------5
-        // Animation on scroll
-        // document.addEventListener('DOMContentLoaded', function() {
-        //     const observerOptions = {
-        //         threshold: 0.1,
-        //         rootMargin: '0px 0px -50px 0px'
-        //     };
-
-        //     const observer = new IntersectionObserver(function(entries) {
-        //         entries.forEach(entry => {
-        //             if (entry.isIntersecting) {
-        //                 if (entry.target.classList.contains('about-text')) {
-        //                     entry.target.classList.add('animate');
-                            
-        //                     // Animate feature items
-        //                     const featureItems = entry.target.querySelectorAll('.feature-item');
-        //                     featureItems.forEach(item => {
-        //                         item.classList.add('animate');
-        //                     });
-        //                 }
-                        
-        //                 if (entry.target.classList.contains('about-image')) {
-        //                     entry.target.classList.add('animate');
-        //                 }
-                        
-        //                 if (entry.target.classList.contains('contact-info')) {
-        //                     entry.target.classList.add('animate');
-                            
-        //                     // Animate contact items
-        //                     const contactItems = entry.target.querySelectorAll('.contact-item');
-        //                     contactItems.forEach(item => {
-        //                         item.classList.add('animate');
-        //                     });
-        //                 }
-                        
-        //                 if (entry.target.classList.contains('contact-form')) {
-        //                     entry.target.classList.add('animate');
-        //                 }
-        //             }
-        //         });
-        //     }, observerOptions);
-
-        //     // Observe elements
-        //     const aboutText = document.querySelector('.about-text');
-        //     const aboutImage = document.querySelector('.about-image');
-        //     const contactInfo = document.querySelector('.contact-info');
-        //     const contactForm = document.querySelector('.contact-form');
-
-        //     if (aboutText) observer.observe(aboutText);
-        //     if (aboutImage) observer.observe(aboutImage);
-        //     if (contactInfo) observer.observe(contactInfo);
-        //     if (contactForm) observer.observe(contactForm);
-
-        //     // Form validation
-        //     const contactFormElement = document.getElementById('contactForm');
-        //     if (contactFormElement) {
-        //         contactFormElement.addEventListener('submit', function(e) {
-        //             e.preventDefault();
-                    
-        //             let isValid = true;
-                    
-        //             // Name validation
-        //             const nameInput = document.getElementById('name');
-        //             const nameError = document.getElementById('nameError');
-        //             if (!nameInput.value.trim()) {
-        //                 nameError.style.display = 'block';
-        //                 isValid = false;
-        //             } else {
-        //                 nameError.style.display = 'none';
-        //             }
-                    
-        //             // Email validation
-        //             const emailInput = document.getElementById('email');
-        //             const emailError = document.getElementById('emailError');
-        //             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        //             if (!emailInput.value.trim() || !emailRegex.test(emailInput.value)) {
-        //                 emailError.style.display = 'block';
-        //                 isValid = false;
-        //             } else {
-        //                 emailError.style.display = 'none';
-        //             }
-                    
-        //             // Message validation
-        //             const messageInput = document.getElementById('message');
-        //             const messageError = document.getElementById('messageError');
-        //             if (!messageInput.value.trim()) {
-        //                 messageError.style.display = 'block';
-        //                 isValid = false;
-        //             } else {
-        //                 messageError.style.display = 'none';
-        //             }
-                    
-        //             if (isValid) {
-        //                 // In a real application, you would submit the form here
-        //                 alert('Thank you for your message! We will get back to you soon.');
-        //                 contactFormElement.reset();
-        //             }
-        //         });
-        //     }
-        // });
+        // Load cart from localStorage
+        function loadCart() {
+            const cartData = localStorage.getItem('cart');
+            cart = cartData ? JSON.parse(cartData) : [];
+        }
