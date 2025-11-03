@@ -1,4 +1,4 @@
- /* CSS Variables for Brand Colors */
+  /* CSS Variables for Brand Colors */
         :root {
             --primary-green: #2e8b57;
             --light-green: #3cb371;
@@ -208,7 +208,7 @@
 
         .search-box input {
             width: 100%;
-            padding: 12px 15px;
+            padding: 12px 40px 12px 40px;
             border: 1px solid #ddd;
             border-radius: var(--border-radius);
             font-size: 1rem;
@@ -219,6 +219,34 @@
             border-color: var(--primary-green);
             outline: none;
             box-shadow: 0 0 0 2px rgba(46, 139, 87, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-text);
+            pointer-events: none;
+        }
+
+        .cancel-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-text);
+            cursor: pointer;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .cancel-icon.active {
+            opacity: 1;
+        }
+
+        .cancel-icon:hover {
+            color: #e74c3c;
         }
 
         .filter-group {

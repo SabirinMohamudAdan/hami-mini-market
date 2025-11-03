@@ -133,6 +133,10 @@
         const continueShopping = document.getElementById('continueShopping');
         const viewOrder = document.getElementById('viewOrder');
 
+        // Search elements
+        const searchInput = document.getElementById('searchInput');
+        const cancelSearch = document.getElementById('cancelSearch');
+
         // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
             // Save products to localStorage for use across modules
@@ -183,8 +187,22 @@
         // Setup event listeners for search and filters
         function setupEventListeners() {
             // Search functionality
-            const searchInput = document.getElementById('searchInput');
-            searchInput.addEventListener('input', filterProducts);
+            searchInput.addEventListener('input', function() {
+                filterProducts();
+                // Show/hide cancel icon based on input
+                if (this.value.length > 0) {
+                    cancelSearch.classList.add('active');
+                } else {
+                    cancelSearch.classList.remove('active');
+                }
+            });
+
+            // Cancel search functionality
+            cancelSearch.addEventListener('click', function() {
+                searchInput.value = '';
+                filterProducts();
+                cancelSearch.classList.remove('active');
+            });
 
             // Category filter
             const categoryFilter = document.getElementById('categoryFilter');
@@ -367,7 +385,7 @@
 
         // Filter products based on search and filter criteria
         function filterProducts() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const searchTerm = searchInput.value.toLowerCase();
             const category = document.getElementById('categoryFilter').value;
             const maxPrice = parseFloat(document.getElementById('priceFilter').value) || Infinity;
 
