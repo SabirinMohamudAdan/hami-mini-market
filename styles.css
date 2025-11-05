@@ -705,11 +705,11 @@
             display: inline-block;
             position: relative;
             font-weight: 700;
-            /* base yellow fill using background-clip trick */
+       
             background:yellow;
             -webkit-background-clip: text;
             background-clip: text;
-            color: transparent;                 /* text shows the gradient */
+            color: transparent;                 
             text-transform: none;
             letter-spacing: 0.5px;
             transition: transform 220ms ease, filter 220ms ease;
