@@ -1,4 +1,4 @@
-  /* CSS Variables for Brand Colors */
+/* CSS Variables for Brand Colors */
         :root {
             --primary-green: #2e8b57;
             --light-green: #3cb371;
@@ -94,17 +94,9 @@
         ul li.act a {
             background: yellow;
             color: white;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
         } 
-
-        ul li.act a {
-            background: yellow;
-            color: white;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary-green);
-        }
-        
 
         .mobile-menu-btn {
             display: none;
@@ -137,7 +129,6 @@
             margin-left: 20px;
             cursor: pointer;
         }
-     
 
         /* Hero Section */
         .hero {
@@ -302,6 +293,7 @@
 
         .filter-btn:hover {
             background-color: yellow;
+            color: var(--dark-text);
         }
 
         /* Products Section */
@@ -443,6 +435,16 @@
             align-items: center;
             padding: 10px 0;
             border-bottom: 1px solid #eee;
+            gap: 15px;
+        }
+
+        .cart-item-image {
+            width: 60px;
+            height: 60px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            flex-shrink: 0;
         }
 
         .cart-item-info {
@@ -451,17 +453,18 @@
 
         .cart-item-name {
             font-weight: 600;
+            margin-bottom: 5px;
         }
 
         .cart-item-price {
             color: var(--primary-green);
+            margin-bottom: 8px;
         }
 
         .cart-item-quantity {
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-top: 5px;
         }
 
         .quantity-btn {
@@ -487,6 +490,7 @@
             color: #e74c3c;
             cursor: pointer;
             font-size: 1.2rem;
+            align-self: flex-start;
         }
 
         .cart-summary {
@@ -692,8 +696,8 @@
         }
 
         .view-order:hover {
-            /* background: var(--dark-green); */
-             background-color: yellow;
+            background-color: yellow;
+            color: var(--dark-text);
         }
 
         /* About Section */
